@@ -1,0 +1,61 @@
+.parent {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* LEFT SIDEBAR */
+.left {
+  width: 240px;
+  background-color: #1976d2;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* APP TITLE */
+.left h1 {
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* MENU */
+.left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.left ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.left ul li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* LOGOUT BUTTON */
+.left button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #1976d2;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.left button:hover {
+  background-color: #e3f2fd;
+}
+
+/* RIGHT CONTENT */
+.right {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
