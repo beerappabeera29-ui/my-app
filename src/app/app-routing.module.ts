@@ -8,6 +8,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CaluclatorComponent } from './caluclator/caluclator.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { EventRegistrationComponent } from './event-registration/event-registration.component';
+import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -17,6 +19,8 @@ const routes: Routes = [
     {path:'data-binding',component:DataBindingComponent},
     {path:'caluclator',component:CaluclatorComponent},
     {path:'directives',component:DirectivesComponent},
+    {path:'event-registration',component: EventRegistrationComponent},
+    {path:'bmi-caluclator',component:BmiCaluclatorComponent}
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}

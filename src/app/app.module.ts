@@ -12,6 +12,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
 import { CaluclatorComponent } from './caluclator/caluclator.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { EventRegistrationComponent } from './event-registration/event-registration.component';
+import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DirectivesComponent } from './directives/directives.component';
     WelcomeComponent,
     DataBindingComponent,
     CaluclatorComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    EventRegistrationComponent,
+    BmiCaluclatorComponent
   ],
   imports: [
     BrowserModule,
