@@ -11,6 +11,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
 import { CaluclatorComponent } from './caluclator/caluclator.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CaluclatorComponent } from './caluclator/caluclator.component';
     HomeComponent,
     WelcomeComponent,
     DataBindingComponent,
-    CaluclatorComponent
+    CaluclatorComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CaluclatorComponent } from './caluclator/caluclator.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path:'welcome',component:WelcomeComponent},
     {path:'data-binding',component:DataBindingComponent},
     {path:'caluclator',component:CaluclatorComponent},
+    {path:'directives',component:DirectivesComponent},
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}
