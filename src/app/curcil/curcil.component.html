@@ -1,0 +1,7 @@
+<div class="parent">
+    <label for="">radius:</label>
+    <input type="text" [(ngModel)]="num">
+    <button (click)="area()">area</button>
+    <button (click)="perimeter()">perimetor</button>
+    <h3>area:{{result | number:'1.2-2'}}</h3>
+</div>

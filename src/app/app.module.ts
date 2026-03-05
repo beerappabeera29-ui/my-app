@@ -14,6 +14,8 @@ import { CaluclatorComponent } from './caluclator/caluclator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.component';
+import { CurcilComponent } from './curcil/curcil.component';
+import { RectangelComponent } from './rectangel/rectangel.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.componen
     CaluclatorComponent,
     DirectivesComponent,
     EventRegistrationComponent,
-    BmiCaluclatorComponent
+    BmiCaluclatorComponent,
+    CurcilComponent,
+    RectangelComponent
   ],
   imports: [
     BrowserModule,

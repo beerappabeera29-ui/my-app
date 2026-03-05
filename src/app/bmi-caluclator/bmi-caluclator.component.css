@@ -31,7 +31,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    line-height: 0.5;
+    line-height: 1;
 
 
     
@@ -47,10 +47,11 @@ label{
     text-align: left;
     margin-bottom: 5px;
     color: #444;
+    color: white;
 }
 
 input{
-    color: white;
+    
     width: 100%;
     padding: 10px;
     border-radius: 8px;

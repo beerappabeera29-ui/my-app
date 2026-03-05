@@ -1,0 +1,48 @@
+.parent {
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.parent label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.parent input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.parent button {
+    padding: 8px 15px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    color: #2575fc;
+    transition: 0.3s;
+}
+
+.parent button:hover {
+    background-color: #ffd700;
+    color: black;
+}
+
+.parent h3 {
+    margin-top: 10px;
+}

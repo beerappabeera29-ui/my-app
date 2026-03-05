@@ -10,6 +10,8 @@ import { CaluclatorComponent } from './caluclator/caluclator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.component';
+import { CurcilComponent } from './curcil/curcil.component';
+import { RectangelComponent } from './rectangel/rectangel.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
     {path:'caluclator',component:CaluclatorComponent},
     {path:'directives',component:DirectivesComponent},
     {path:'event-registration',component: EventRegistrationComponent},
-    {path:'bmi-caluclator',component:BmiCaluclatorComponent}
+    {path:'bmi-caluclator',component:BmiCaluclatorComponent},
+    {path:'curcil',component:CurcilComponent},
+    {path:'rectangel',component:RectangelComponent},
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}
