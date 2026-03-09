@@ -1,0 +1,51 @@
+
+
+<table class="table table-dark table-borderd table-striped">
+    <thead >
+        <tr >
+            <th>id</th>
+            <th>ehicle</th>
+            <th>manufacturer</th>
+            <th>model</th>
+            <th>type</th>
+            <th>fuel</th>
+            <th>color</th>
+            <th>image</th>
+            <th>cost</th>
+            <th>tyres</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehi of vehicle; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{vehi.Vehicle}}</td>
+            <td>{{vehi.manufacturer}}</td>
+            <td>{{vehi.model}}</td>
+            <td>{{vehi.type}}</td>
+            <td>{{vehi.fuel}}</td>
+            <td>{{vehi.color}}</td>
+            <td>
+            <img src="{{vehi.image}}" width="100px" height="100px">
+            </td>
+            <td>{{vehi.cost}}</td>
+            <td>{{vehi.tyres}}</td>
+          
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!-- 
+  {
+    "Vehicle": "Maserati Altima",
+    "manufacturer": "Porsche",
+    "model": "Alpine",
+    "type": "Cargo Van",
+    "fuel": "Hybrid",
+    "color": "azure",
+    "image": "https://picsum.photos/seed/BryrZP6v/3880/1653",
+    "cost": "944.29",
+    "tyres": 85,
+    "id": "2"
+  }, -->

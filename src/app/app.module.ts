@@ -16,6 +16,12 @@ import { EventRegistrationComponent } from './event-registration/event-registrat
 import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.component';
 import { CurcilComponent } from './curcil/curcil.component';
 import { RectangelComponent } from './rectangel/rectangel.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { ProductsComponent } from './products/products.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import{HttpClientModule}from '@angular/common/http';
+import { AccountComponent } from './account/account.component';
+import { FlipcartComponent } from './flipcart/flipcart.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +37,18 @@ import { RectangelComponent } from './rectangel/rectangel.component';
     EventRegistrationComponent,
     BmiCaluclatorComponent,
     CurcilComponent,
-    RectangelComponent
+    RectangelComponent,
+    EmployeeComponent,
+    ProductsComponent,
+    VehicleComponent,
+    AccountComponent,
+    FlipcartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

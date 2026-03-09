@@ -1,0 +1,45 @@
+<table class="table table-dark table-borderd table-striped">
+    <thead>
+        <tr>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>account_number</th>
+            <th>city</th>
+            <th>profie_picture</th>
+            <th>ifsc_code</th>
+            <th>id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let acc of account">
+           <td>{{acc.account_name}}</td>
+           <td>{{acc.available_balance}}</td>
+           <td>{{acc.account_number}}</td>
+           <td>{{acc.city}}</td>
+           <td>
+            <img src="{{acc.profie_picture}}" width="100px" height="100px" style="border-radius: 50px;">
+           </td>
+           <td>{{acc.ifsc_code}}</td>
+           <td>{{acc.id}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+<!-- 
+  {
+    "account_name": null,
+    "available_balance": null,
+    "account_number": null,
+    "city": null,
+    "profie_picture": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/66.jpg",
+    "ifsc_code": null,
+    "id": "24"
+  }, -->

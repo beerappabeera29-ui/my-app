@@ -12,6 +12,11 @@ import { EventRegistrationComponent } from './event-registration/event-registrat
 import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.component';
 import { CurcilComponent } from './curcil/curcil.component';
 import { RectangelComponent } from './rectangel/rectangel.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { ProductsComponent } from './products/products.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { AccountComponent } from './account/account.component';
+import { FlipcartComponent } from './flipcart/flipcart.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -25,6 +30,11 @@ const routes: Routes = [
     {path:'bmi-caluclator',component:BmiCaluclatorComponent},
     {path:'curcil',component:CurcilComponent},
     {path:'rectangel',component:RectangelComponent},
+    {path:'employee',component:EmployeeComponent},
+    {path:'products',component:ProductsComponent},
+    {path:'vehicle',component:VehicleComponent},
+    {path:'account',component:AccountComponent},
+    {path:'flipcart',component:FlipcartComponent}
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}
