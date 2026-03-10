@@ -17,6 +17,7 @@ import { ProductsComponent } from './products/products.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { AccountComponent } from './account/account.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
+import { MailComponent } from './mail/mail.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
     {path:'products',component:ProductsComponent},
     {path:'vehicle',component:VehicleComponent},
     {path:'account',component:AccountComponent},
-    {path:'flipcart',component:FlipcartComponent}
+    {path:'flipcart',component:FlipcartComponent},
+    {path:'mail',component:MailComponent}
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}

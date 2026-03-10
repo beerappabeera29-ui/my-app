@@ -22,6 +22,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
 import{HttpClientModule}from '@angular/common/http';
 import { AccountComponent } from './account/account.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
+import { MailComponent } from './mail/mail.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FlipcartComponent } from './flipcart/flipcart.component';
     ProductsComponent,
     VehicleComponent,
     AccountComponent,
-    FlipcartComponent
+    FlipcartComponent,
+    MailComponent
   ],
   imports: [
     BrowserModule,
