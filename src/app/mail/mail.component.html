@@ -1,7 +1,7 @@
 
   <div class="parent">
       <ol > 
-        <li *ngFor="let ma of mail"  [style.color]="getColor(ma)">
+        <li *ngFor="let ma of mail" appHighlight>
             {{ma.title}}
         </li>
     </ol>

@@ -17,4 +17,11 @@ export class DirectivesComponent {
  ]
 
 isvalid:boolean=true;
+
+today:any=new Date();
+
+
+// debugging
+user:any={name:'abe',age:20}
+
 }

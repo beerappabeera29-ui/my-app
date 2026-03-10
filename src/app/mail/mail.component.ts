@@ -22,12 +22,6 @@ mail:any=[];
       )
   }
 
- getColor(ma:any){
-  if(ma.completed == true){
-    return 'black';
-  }else{
-    return 'gray';
-  }
-}
+
   
 }

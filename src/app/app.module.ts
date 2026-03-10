@@ -23,6 +23,9 @@ import{HttpClientModule}from '@angular/common/http';
 import { AccountComponent } from './account/account.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
 import { MailComponent } from './mail/mail.component';
+import { YPipe } from './y.pipe';
+import { RolePipe } from './role.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { MailComponent } from './mail/mail.component';
     VehicleComponent,
     AccountComponent,
     FlipcartComponent,
-    MailComponent
+    MailComponent,
+    YPipe,
+    RolePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
