@@ -20,6 +20,7 @@ import { FlipcartComponent } from './flipcart/flipcart.component';
 import { MailComponent } from './mail/mail.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NuakriComponent } from './nuakri/nuakri.component';
+import { ContactCeoComponent } from './contact/contact-ceo/contact-ceo.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -40,7 +41,8 @@ const routes: Routes = [
     {path:'flipcart',component:FlipcartComponent},
     {path:'mail',component:MailComponent},
     {path:'weather',component:WeatherComponent},
-    {path:'nuakri',component:NuakriComponent}
+    {path:'nuakri',component:NuakriComponent},
+    {path:'contact-ceo',component:ContactCeoComponent},
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}

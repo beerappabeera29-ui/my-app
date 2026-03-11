@@ -29,6 +29,8 @@ import { HighlightDirective } from './highlight.directive';
 import { CapitalDirective } from './capital.directive';
 import { WeatherComponent } from './weather/weather.component';
 import { NuakriComponent } from './nuakri/nuakri.component';
+import { ContactCeoComponent } from './contact/contact-ceo/contact-ceo.component';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { NuakriComponent } from './nuakri/nuakri.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ContactModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
