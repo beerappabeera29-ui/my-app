@@ -1,0 +1,44 @@
+<div class="wether card">
+ <h1>weather in hyderbad</h1>
+ <h2 >☀️</h2>
+
+<h1 [ngClass]="{'costly':weather.current_weather.temperature<=25,'cheap':weather.current_weather.temperature>25}">{{weather.current_weather.temperature}} {{weather.current_weather_units.temperature}}</h1>
+
+<h4>windspped {{weather.current_weather.windspeed}} {{weather.current_weather_units.windspeed}}</h4>
+<h4>wind direction {{weather.current_weather.winddirection}} {{weather.current_weather_units.winddirection}}</h4>
+<h5> daytime{{weather.current_weather.is_day}}  {{weather.current_weather_units.is_day}}</h5>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- "latitude": 17.375,
+  "longitude": 78.5,
+  "generationtime_ms": 0.0538825988769531,
+  "utc_offset_seconds": 0,
+  "timezone": "GMT",
+  "timezone_abbreviation": "GMT",
+  "elevation": 505,
+  "current_weather_units": {
+    "time": "iso8601",
+    "interval": "seconds",
+    "temperature": "°C",
+    "windspeed": "km/h",
+    "winddirection": "°",
+    "is_day": "",
+    "weathercode": "wmo code"
+  }, -->

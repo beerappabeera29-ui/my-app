@@ -26,6 +26,9 @@ import { MailComponent } from './mail/mail.component';
 import { YPipe } from './y.pipe';
 import { RolePipe } from './role.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { CapitalDirective } from './capital.directive';
+import { WeatherComponent } from './weather/weather.component';
+import { NuakriComponent } from './nuakri/nuakri.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { HighlightDirective } from './highlight.directive';
     MailComponent,
     YPipe,
     RolePipe,
-    HighlightDirective
+    HighlightDirective,
+    CapitalDirective,
+    WeatherComponent,
+    NuakriComponent,
   ],
   imports: [
     BrowserModule,
