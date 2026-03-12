@@ -43,7 +43,8 @@ const routes: Routes = [
     {path:'weather',component:WeatherComponent},
     {path:'nuakri',component:NuakriComponent},
     {path:'contact-ceo',component:ContactCeoComponent},
-    {path:'payment', loadChildren:()=>import('./payment/payment.module').then(m=>m.PaymentModule)}
+    {path:'payment', loadChildren:()=>import('./payment/payment.module').then(m=>m.PaymentModule)},
+    {path:'movie',loadChildren:()=>import('./movie/movie.module').then(m=>m.MovieModule)},
   ]},
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}

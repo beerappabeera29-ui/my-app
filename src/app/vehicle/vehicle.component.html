@@ -1,24 +1,30 @@
 <h1 appHighlight >all vahicle</h1>
 <h6 appHighlight [color]="'blue'">showing avalible vachiclesbin the table </h6>
 
+<input type="text"[(ngModel)]="term" placeholder="seach">
+<button (click)="filtervehicle()">search</button>
+
 <table class="table table-dark table-borderd table-striped">
     <thead >
         <tr >
+            <th>sno</th>
             <th>id</th>
             <th>ehicle</th>
             <th>manufacturer</th>
             <th>model</th>
             <th>type</th>
             <th>fuel</th>
-            <th>color</th>
+            <th (click)="sortvehicle('color')">color</th>
             <th>image</th>
             <th>cost</th>
             <th>tyres</th>
+            <th>actions</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let vehi of vehicle; let i=index">
             <td>{{i+1}}</td>
+            <td>{{vehi.id}}</td>
             <td>{{vehi.Vehicle}}</td>
             <td>{{vehi.manufacturer}}</td>
             <td>{{vehi.model}}</td>
@@ -26,14 +32,21 @@
             <td>{{vehi.fuel}}</td>
             <td>{{vehi.color}}</td>
             <td>
-            <img src="{{vehi.image}}" width="100px" height="100px">
+            <img src="{{vehi.image}}" alt="" width="100px" height="100px">
             </td>
             <td>{{vehi.cost|y}}</td>
             <td>{{vehi.tyres}}</td>
+            <td>
+                <button (click)="deletevechicle(vehi.id)" class="btn btn-danger">delete</button>
+            </td>
           
         </tr>
     </tbody>
 </table>
+
+<button 
+ *ngFor="let x of [].constructor(10);let i=index" (click)="pagevehicle(i+1)">{{i+1}}</button>
+
 
 
 

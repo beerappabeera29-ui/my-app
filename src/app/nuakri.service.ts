@@ -9,6 +9,13 @@ export class NuakriService {
 
   constructor(private httpclient:HttpClient) { }
   getnuakri():Observable<any>{
-    return this.httpclient.get('https://jsonfakery.com/jobs')
+    return this.httpclient.get("https://jsonfakery.com/jobs?limit=10&page=1")
+  }
+
+  pagenuakri(page:number):Observable<any>{
+    return this.httpclient.get("https://jsonfakery.com/jobs?limit=10&page="+page);
+  }
+  filternuakri(term:string):Observable<any>{
+    return this.httpclient.get("https://jsonfakery.com/jobs?filter="+term);
   }
 }

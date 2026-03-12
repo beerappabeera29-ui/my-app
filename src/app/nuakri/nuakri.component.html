@@ -1,5 +1,6 @@
 <div class="parent">
     <div class="child">
+          
         <div class="top">
             <div class="t1">
                 <h2 class="lo"></h2>
@@ -7,13 +8,15 @@
                 <h6>jobs</h6>
                 <h6>comapny</h6>
                 <h6>service</h6>
-                <div class="ser" >
-                    <input style="border-radius: 20px;" type="text" placeholder="search jobs here " >
-                    
-                </div >
-                
+                <div class="ser">
+                    <input style="border-radius: 20px; border: none;outline: 0;" type="text"[(ngModel)]="term" placeholder="search jobs here ">
+                    <p style="position: relative;top: 30%;" (click)=" filternuakri()"><i class="fa-solid fa-magnifying-glass"></i></p>
+
+                </div>
+
                 <button class="nu">naukri <span>360</span></button>
                 <div class="pro">
+                    <p style="position: relative;top: 20%;"><i class="fa-solid fa-bars"></i></p>
                     <p class="fil"></p>
                 </div>
 
@@ -25,15 +28,36 @@
                     <button class="app">apply</button>
                 </div>
             </div>
-                <div class="t3">
-                    <h5>urgent hiring</h5>
-                    <h5>Applies</h5>
-                    <h5>Profile</h5>
-                    <h5>Top Candidate</h5>
-                    <h5>Preferences</h5>
-                    <h5>You might like</h5>
-                </div>
-            
+            <div class="t3">
+                <h5>urgent hiring</h5>
+                <h5>Applies</h5>
+                <h5>Profile</h5>
+                <h5>Top Candidate</h5>
+                <h5>Preferences</h5>
+                <h5>You might like</h5>
+            </div>
+
         </div>
+       
+        <div class="container">
+            <div class="con" *ngFor="let na of nuakri">
+                <div class="main">
+                    <h6 style="font-weight: bold;"><i class="fa-regular fa-square"></i> {{na.employment_type}}</h6><br>
+                    <p style="font-size: small;"> <i class="fa-solid fa-briefcase"></i> {{na.qualifications}}</p>
+                    <p style="font-size: small;"><i class="fa-solid fa-location-dot"></i>{{na.location}} | <i
+                            class="fa-solid fa-indian-rupee-sign"></i>
+                        {{na.salary_from}} - {{na.salary_to}} per moth/-</p>
+                    <p style="font-size: small;"><i class="fa-regular fa-file-lines"></i> {{na.title}}</p>
+                    <p style="font-size: x-small;"> <i class="fa-regular fa-calendar"></i> {{na.created_at}}</p>
+
+
+                </div>
+            </div>
+      
+        
+        </div>
+           <button 
+           *ngFor="let x of [].constructor(10);let i=index" (click)="pagenuakri(i+1)">{{i+1}}</button>
     </div>
+       
 </div>

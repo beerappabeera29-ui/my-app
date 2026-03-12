@@ -9,12 +9,12 @@ import { NuakriService } from '../nuakri.service';
 export class NuakriComponent {
 
   nuakri:any=[];
-
+  term:string="";
 constructor(private nuakriservice:NuakriService){
   nuakriservice.getnuakri().subscribe(
     (data:any)=>{
       this.nuakri=data;
-      console.log(data)
+      // console.log(data)
     },
     (err:any)=>{
       alert('not available data here')
@@ -22,6 +22,28 @@ constructor(private nuakriservice:NuakriService){
     )
   
 }
+  pagenuakri(page:number){
+  this.nuakriservice.pagenuakri(page).subscribe(
+    (data:any)=>{
+      this.nuakri=data;
+      // console.log(data)
+    },
+    (err:any)=>{
+      alert('not available data here')
+    }
+    )
+  }
+  filternuakri(){
+  this.nuakriservice.filternuakri(this.term).subscribe(
+    (data:any)=>{
+      this.nuakri=data;
+      console.log(this.nuakri)
+    },
+    (err:any)=>{
+      alert('not available data here')
+    }
+    )
+  }
 
 
 }

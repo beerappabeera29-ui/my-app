@@ -31,6 +31,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { NuakriComponent } from './nuakri/nuakri.component';
 import { ContactCeoComponent } from './contact/contact-ceo/contact-ceo.component';
 import { ContactModule } from './contact/contact.module';
+import { MovieModule } from './movie/movie.module';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,8 @@ import { ContactModule } from './contact/contact.module';
     FormsModule,
     HttpClientModule,
     ContactModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
