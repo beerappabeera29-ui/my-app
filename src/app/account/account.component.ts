@@ -7,17 +7,60 @@ import { AccountService } from '../account.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
+  term:string="";
+  column:string="";
+  order:string="";
+  page:number=1;
+ 
 account:any=[];
 
   constructor(private accountservice:AccountService){
-    accountservice.getaccount().subscribe(
+    this.getaccountwithqueryparams();
+  }
+
+  getaccountwithqueryparams(){
+    this.accountservice.getaccountwithqueryparams(this.term,this.column,this.order,this.page).subscribe(
       (data:any)=>{
         this.account=data;
-        console.log(data);
+        console.log(data)
       },
       (err:any)=>{
-        alert("not downlode api")
+        alert('issue')
+      }
+    )
+  }
+  search(){
+    this.getaccountwithqueryparams();
+  }
+  isAsc:boolean=false;
+  sort(column:string){
+    this.column=column;
+
+    this.isAsc=!this.isAsc;
+    this.order=this.isAsc?'asc':'desc';
+
+    this.getaccountwithqueryparams();
+  }
+
+  pageaccount(page:number){
+    this.page=page;
+
+    this.getaccountwithqueryparams();
+  }
+
+  deleteaccount(id:string){
+
+
+  this.accountservice.deleteaccount(id).subscribe((data:any)=>{
+    this.account=data;
+        console.log(data)
+        location.reload()
+        alert(data.id )
+      },
+      (err:any)=>{
+        alert('error')
       }
     )
   }
 }
+    

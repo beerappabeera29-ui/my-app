@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CaluclatorComponent } from './caluclator/caluclator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
@@ -32,6 +32,11 @@ import { NuakriComponent } from './nuakri/nuakri.component';
 import { ContactCeoComponent } from './contact/contact-ceo/contact-ceo.component';
 import { ContactModule } from './contact/contact.module';
 import { MovieModule } from './movie/movie.module';
+import { Vechicle2Component } from './vechicle2/vechicle2.component';
+import { SchoolIdModule } from './school-id/school-id.module';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { CreateStudentComponent } from './create-student/create-student.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +65,10 @@ import { MovieModule } from './movie/movie.module';
     CapitalDirective,
     WeatherComponent,
     NuakriComponent,
+    Vechicle2Component,
+    CreateUserComponent,
+    CreateVehicleComponent,
+    CreateStudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +76,7 @@ import { MovieModule } from './movie/movie.module';
     FormsModule,
     HttpClientModule,
     ContactModule,
+    ReactiveFormsModule,
     
 
   ],

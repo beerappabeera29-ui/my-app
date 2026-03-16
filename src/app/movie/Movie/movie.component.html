@@ -1,1 +1,46 @@
+<div class="movie-container" *ngFor="let mo of movies">
 
+  <!-- Background -->
+  <div class="movie-bg" [style.background-image]="'url(' + mo.backdrop_path + ')'">
+
+    <div class="movie-details">
+
+      <!-- Poster -->
+      <div class="poster">
+        <img [src]="mo.poster_path">
+      </div>
+
+      <!-- Movie Info -->
+      <div class="info">
+        <h1>{{mo.original_title}}</h1>
+
+        <p><b>Language:</b> {{mo.original_language}}</p>
+
+        <p><b>Rating:</b> {{mo.vote_average}} ⭐</p>
+
+        <p class="overview">{{mo.overview}}</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Cast Section -->
+  <div class="cast-section">
+
+    <h2>Top Cast</h2>
+
+    <div class="cast-card" *ngFor="let cast of mo.casts.slice(0,5)">
+
+      <img [src]="cast.profile_path">
+
+      <h4>{{cast.name}}</h4>
+
+      <p>{{cast.character}}</p>
+
+    </div>
+
+  </div>
+
+</div>

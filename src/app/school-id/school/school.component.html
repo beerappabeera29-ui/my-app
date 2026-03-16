@@ -1,0 +1,55 @@
+<div class="parent">
+    <div class="top">
+        <input [(ngModel)]="term" type="text" (keyup)="getschoolwithqueryparams()">
+
+        <label for="">column:</label>
+        <select name="" id="" [(ngModel)]="column">
+            <option value="">select</option>
+            <option value="name">name</option>
+            <option value="dob">dob</option>
+            <option value="school_name">school name</option>
+            <option value="phone">phone</option>
+        </select>
+
+
+        <label for="">order:</label>
+        <select name="" id="" [(ngModel)]="order">
+            <option value="asc">asc</option>
+            <option value="desc">desc</option>
+        </select>
+        <button (click)="sort(column,order)">sort</button>
+
+        <label for="">limit:</label>
+        <input type="number" [(ngModel)]="limit">
+
+        <label for="">page:</label>
+        <input type="number" [(ngModel)]="page">
+        <button (click)="paginate(page,limit)">page</button>
+
+    </div>
+    <div class="sch" *ngFor="let s of school">
+        <div class="c1">
+            <img src="{{s.school_logo}}" width="80px" height="80px" style="font-size: x-small; font-weight: 700;"
+                alt="">
+            <h5> school name: {{s.school_name}}</h5>
+        </div>
+        <div class="c2">
+            <div>
+                <p>id: {{s.id}}</p>
+                <p>Name: {{s.name}}</p>
+                <p>Phone: {{s.phone}}</p>
+                <p>city: {{s.city}}</p>
+                <p>dob: {{s.dob}}</p>
+                <p>address: {{s.school_city}}</p>
+                <p> school pin: {{s.school_pin}}</p>
+            </div>
+            <div class="pic">
+                <img src="{{s.profile_picture}}" width="150px" height="150px" alt="">
+            </div>
+        </div>
+        <div class="c3">
+            <button class="btn btn-danger">button</button>
+        </div>
+    </div>
+
+</div>

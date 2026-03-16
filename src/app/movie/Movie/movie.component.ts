@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieService } from 'src/app/movie.service';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-movie',
@@ -8,15 +8,15 @@ import { MovieService } from 'src/app/movie.service';
 })
 export class MovieComponent {
 
-movie:any=[];
+movies:any[]=[];
 
  constructor(private movieservice:MovieService){
   movieservice.getmovie().subscribe(
     (data:any)=>{
-      this.movie=data;
+      this.movies=data.data;
       console.log(data)
     },
-    (err)=>{
+    (err:any)=>{
       alert("this data not availabl")
     }
   )
