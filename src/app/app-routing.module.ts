@@ -26,6 +26,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { AuthGuard } from './auth.guard';
+import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -54,8 +55,10 @@ const routes: Routes = [
     {path:'school-id',loadChildren:()=>import('./school-id/school-id.module').then(m=>m.SchoolIdModule)},
     {path:'create-user',component:CreateUserComponent},
     {path:'create-vehicle',component:CreateVehicleComponent},
-    {path:'create-student',component:CreateStudentComponent}
+    {path:'create-student',component:CreateStudentComponent},
+    {path:'view-vehicle/:id',component:ViewVehicleComponent}
   ]},
+  
   {path:'',component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}
 ];

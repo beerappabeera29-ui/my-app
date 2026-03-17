@@ -37,6 +37,7 @@ import { SchoolIdModule } from './school-id/school-id.module';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { CreateStudentComponent } from './create-student/create-student.componen
     CreateUserComponent,
     CreateVehicleComponent,
     CreateStudentComponent,
+    ViewVehicleComponent,
   ],
   imports: [
     BrowserModule,

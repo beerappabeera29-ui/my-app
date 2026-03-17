@@ -22,13 +22,13 @@ export class CreateStudentComponent {
     school_name: new FormControl(),
     school_city: new FormControl(),
     school_pin: new FormControl(),
-
+    // emial: new FormControl(),
 
   })
     
   constructor(private schoolservice:SchoolService){}
   submit(){
-    console.log(this.studentform)
+    console.log(this.studentform.value)
     this.schoolservice.createschool(this.studentform.value).subscribe(
       (data:any)=>{
         alert('value succusfylly')
@@ -36,8 +36,8 @@ export class CreateStudentComponent {
 
       },
       (err:any)=>{
-        alert('error')
-      }
+  console.log(err);
+}
     )
   }
 }
