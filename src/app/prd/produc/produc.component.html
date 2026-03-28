@@ -1,0 +1,178 @@
+<h1>product</h1>
+<form action="" [formGroup]="producform" >
+    <label for="">title:</label>
+    <input type="text" formControlName="title">
+
+    <div *ngIf="producform.get('title')?.touched && producform.get('title')?.invalid">
+        <p *ngIf="producform.get('title')?.errors?.['required']">must have title</p>
+
+    </div>
+    <br>
+
+    <label for="">description:</label>
+    <input type="text" formControlName="description">
+
+    <div *ngIf="producform.get('description')?.touched && producform.get('description')?.invalid">
+        <p *ngIf="producform.get('description')?.errors?.['required']">write description</p>
+        <p *ngIf="producform.get('description')?.errors?.['min']">minium 15 chars</p>
+        <p *ngIf="producform.get('description')?.errors?.['max']">maximum 100 chars</p>
+    </div>
+    <br>
+
+    <label for="">category:</label>
+    <input type="text" formControlName="category">
+
+    <div *ngIf="producform.get('category')?.touched && producform.get('category')?.invalid">
+        <p *ngIf="producform.get('category')?.errors?.['required']">invalid category</p>
+
+    </div>
+    <br>
+
+    <label for="">price:</label>
+    <input type="text" formControlName="price">
+
+    <div *ngIf="producform.get('price')?.touched && producform.get('price')?.invalid">
+        <p *ngIf="producform.get('price')?.errors?.['required']">write description</p>
+        <p *ngIf="producform.get('price')?.errors?.['min']">minium 2 digitis</p>
+        <p *ngIf="producform.get('price')?.errors?.['max']">maximum 10 digits</p>
+    </div>
+    <br>
+
+    <label for="">discountPercentage:</label>
+    <input type="text" formControlName="discountPercentage">
+
+    
+    <div *ngIf="producform.get('discountPercentage')?.touched && producform.get('discountPercentage')?.invalid">
+        <p *ngIf="producform.get('discountPercentage')?.errors?.['required']">write discountPercentage</p>
+        <p *ngIf="producform.get('discountPercentage')?.errors?.['min']">minium 0 digits</p>
+        <p *ngIf="producform.get('discountPercentage')?.errors?.['max']">maximum 100 digits</p>
+    </div>
+    <br>
+
+    <label for="">rating:</label>
+    <input type="text" formControlName="rating">
+
+     <div *ngIf="producform.get('rating')?.touched && producform.get('rating')?.invalid">
+        <p *ngIf="producform.get('rating')?.errors?.['required']">give rating</p>
+        <p *ngIf="producform.get('rating')?.errors?.['min']">minium 2 digits</p>
+        <p *ngIf="producform.get('rating')?.errors?.['max']">maximum 5 digits</p>
+    </div>
+    <br>
+
+    <label for="">stock:</label>
+    <input type="text" formControlName="stock">
+
+    <div *ngIf="producform.get('stock')?.touched && producform.get('stock')?.invalid">
+        <p *ngIf="producform.get('stock')?.errors?.['required']">invalid stock</p>
+
+    </div>
+
+    <div formGroupName="dimensions">
+        <label for="">width:</label>
+        <input type="text" formControlName="width">
+        
+    <div *ngIf="producform.get('dimensions')?.get('width')?.touched && producform.get('dimensions')?.get('width')?.invalid">
+        <p *ngIf="producform.get('dimensions')?.get('width')?.errors?.['required']">give width</p>
+        <p *ngIf="producform.get('dimensions')?.get('width')?.errors?.['min']">minium 2 digits</p>
+        <p *ngIf="producform.get('dimensions')?.get('width')?.errors?.['max']">maximum 5 digits</p>
+    </div>
+        <br>
+
+        <label for="">height:</label>
+        <input type="text" formControlName="height"><br>
+
+    <div *ngIf="producform.get('dimensions')?.get('height')?.touched && producform.get('dimensions')?.get('height')?.invalid">
+        <p *ngIf="producform.get('dimensions')?.get('height')?.errors?.['required']">give height</p>
+        <p *ngIf="producform.get('dimensions')?.get('height')?.errors?.['min']">minium 2 digits</p>
+        <p *ngIf="producform.get('dimensions')?.get('height')?.errors?.['max']">maximum 5 digits</p>
+    </div>
+
+        <label for="">depth:</label>
+        <input type="text" formControlName="depth">
+
+    <div *ngIf="producform.get('dimensions')?.get('depth')?.touched && producform.get('dimensions')?.get('depth')?.invalid">
+        <p *ngIf="producform.get('dimensions')?.get('depth')?.errors?.['required']">invalid depth</p>
+        <p *ngIf="producform.get('dimensions')?.get('depth')?.errors?.['min']">minium 2 digits</p>
+        <p *ngIf="producform.get('dimensions')?.get('depth')?.errors?.['max']">maximum 5 digits</p>
+    </div>
+    </div>
+
+    <label for="">tags:</label><br>
+
+    <input type="radio" name="tags" formControlName="tags" value="beauty">
+    <label for="">beauty</label><br>
+
+    <input type="radio" name="tags" formControlName="tags" value="mascara">
+    <label for="">mascara</label>
+
+    <div *ngIf="producform.get('tags')?.value=='beauty'">
+        <label for="">beauty</label>
+        <input type="text" formControlName="beauty">
+    </div>
+
+    <div *ngIf="producform.get('tags')?.value=='mascara'">
+        <label for="">mascara</label>
+        <input type="text" formControlName="mascara">
+    </div>
+
+    <button class="but" (click)="addcart()">addcart</button>
+
+    <div formArrayName="reviews">
+        <div *ngFor="let revi of reviewsFormArray.controls, let i=index">
+            <div formGroupName="{{i}}">
+
+                <h1>reviews:{{i+1}}</h1>
+                <label for="">rating</label>
+                <input type="number" formControlName="rating">
+                
+                <div *ngIf="reviewsFormArray.controls[i]?.get('rating')?.touched && reviewsFormArray.controls[i]?.get('rating')?.invalid">
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('rating')?.errors?.['required']">inavild rating</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('rating')?.errors?.['min']">minum 1 digits</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('rating')?.errors?.['max']">maximum 1 digits</p>
+                </div>
+                <br>
+
+                <label for="">comment</label>
+                <input type="text" formControlName="comment">
+                
+                <div *ngIf="reviewsFormArray.controls[i]?.get('comment')?.touched && reviewsFormArray.controls[i]?.get('comment')?.invalid">
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('comment')?.errors?.['required']">invalid comment</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('comment')?.errors?.['minlength']">minlegth at least 10 chars</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('comment')?.errors?.['maxlegth']">maxlength 20 chars</p>
+                </div>
+                <br>
+
+                <label for="">date</label>
+                <input type="date" formControlName="date"><br>
+
+                <label for="">reviewerName:</label>
+                <input type="text" formControlName="reviewerName">
+                
+                <div *ngIf="reviewsFormArray.controls[i]?.get('reviewerName')?.touched && reviewsFormArray.controls[i]?.get('reviewerName')?.invalid">
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('reviewerName')?.errors?.['required']">invalid comment</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('reviewerName')?.errors?.['minlength']">minlegth at least 10 chars</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('reviewerName')?.errors?.['maxlegth']">maxlength 20 chars</p>
+                </div>
+                <br>
+
+                <label for="">reviewerEmail:</label>
+                <input type="mail" formControlName="reviewerEmail">
+
+                <div *ngIf="reviewsFormArray.controls[i]?.get('reviewerEmail')?.touched && reviewsFormArray.controls[i]?.get('reviewerEmail')?.invalid">
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('reviewerEmail')?.errors?.['required']">invalid comment</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('reviewerEmail')?.errors?.['minlength']">minlegth at least 10 chars</p>
+                    <p *ngIf="reviewsFormArray.controls[i]?.get('reviewerEmail')?.errors?.['maxlegth']">maxlength 20 chars</p>
+                </div>
+
+
+                <button (click)="delete(i)">delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <button (click)="submit()">submit</button>
+</form>

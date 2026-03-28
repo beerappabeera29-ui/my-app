@@ -19,6 +19,7 @@
             <th>cost</th>
             <th>tyres</th>
             <th>actions</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -35,12 +36,20 @@
             <img src="{{vehi.image}}" alt="" width="100px" height="100px">
             </td>
             <td>{{vehi.cost|y}}</td>
+
+            
             <td>{{vehi.tyres}}</td>
+            
+
+             
+                
+             
             <td>
                 <button class="btn btn-primary" routerLink="/dashboard/view-vehicle/{{vehi.id}}">view</button>
-                <button class="btn btn-warning">edit</button>
+                <button class="btn btn-warning" routerLink="/dashboard/edit-vehicle/{{vehi.id}}">edit</button>
                 <button (click)="deletevechicle(vehi.id)" class="btn btn-danger">delete</button>
             </td>
+            
           
         </tr>
     </tbody>

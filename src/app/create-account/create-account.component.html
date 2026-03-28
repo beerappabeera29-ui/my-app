@@ -1,0 +1,62 @@
+<h1>{{id ? 'Edit' : 'Create'}} Account</h1>
+
+<div class="container">
+
+  <!-- FORM -->
+  <form [formGroup]="accountform" (ngSubmit)="submit()">
+
+    <div class="input-box">
+      <input type="text" formControlName="account_name" required>
+      <label>Account Name</label>
+    </div>
+
+    <div class="input-box">
+      <input type="number" formControlName="account_number" required>
+      <label>Account Number</label>
+    </div>
+
+    <div class="input-box">
+      <input type="number" formControlName="available_balance" required>
+      <label>Balance</label>
+    </div>
+
+    <div class="input-box">
+      <input type="text" formControlName="ifsc_code" required>
+      <label>IFSC Code</label>
+    </div>
+
+    <div class="input-box">
+      <input type="text" formControlName="city">
+      <label>City</label>
+    </div>
+
+    <div class="input-box">
+      <input type="image" formControlName="profie_picture">
+      <label>Profile Image URL</label>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- LIVE CARD -->
+  <div class="card">
+
+    <div class="top">
+      <h3>Bank Account</h3>
+    </div>
+
+    <div class="middle">
+      <h2>{{accountform.value.account_number || 'XXXX XXXX'}}</h2>
+      <p>{{accountform.value.account_name || 'Your Name'}}</p>
+    </div>
+
+    <div class="bottom">
+      <span>{{accountform.value.ifsc_code || 'IFSC0000'}}</span>
+      <span>₹ {{accountform.value.available_balance || 0}}</span>
+    </div>
+
+    <img [src]="accountform.value.profie_picture" *ngIf="accountform.value.profie_picture">
+
+  </div>
+
+</div>

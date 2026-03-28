@@ -26,6 +26,8 @@
            <td>{{acc.ifsc_code}}</td>
            <td>{{acc.id}}</td>
            <td>
+            <button class="btn btn-primary" routerLink="/dashboard/view-account/{{acc.id}}">view</button>
+            <button class="0btn btn-Warning" routerLink="/dashboard/edit-account/{{acc.id}}">edit</button>
             <button (click)="deleteaccount(acc.id)" class="btn btn-danger">delete</button>
            </td>
         </tr>

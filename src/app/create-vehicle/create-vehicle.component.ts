@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
+import { ActivatedRoute } from '@angular/router';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -22,18 +24,46 @@ export class CreateVehicleComponent {
 
   })
 
-  constructor(private vehicleservice:VehicleService){}
-  submit(){
-    console.log(this.vehicleform);
-    this.vehicleservice.createvehicle(this.vehicleform.value).subscribe(
+  
+
+     id:string=""; 
+  constructor(private vehicleservice:VehicleService ,private activatedroute:ActivatedRoute){
+    activatedroute.params.subscribe(
       (data:any)=>{
-        alert("succufully")
+        this.id=data.id;
+        vehicleservice.getvehicles(this.id).subscribe(
+          (data:Vehicle)=>{
+            this.vehicleform.patchValue(data);
+          }
+        )
+      }
+    )
+  }
+  submit(){
+    
+    console.log(this.vehicleform);
+    if(this.id){
+       this.vehicleservice.editvehicle(this.id,this.vehicleform.value).subscribe(
+      (data:Vehicle)=>{
+        alert("succufully edit")
         this.vehicleform.reset();
       },
       (err:any)=>{
         alert('error')
       }
     )
+    }
+    else{
+       this.vehicleservice.createvehicle(this.vehicleform.value).subscribe(
+      (data:Vehicle)=>{
+        alert("succufully create")
+        this.vehicleform.reset();
+      },
+      (err:any)=>{
+        alert('error')
+      }
+    )
+    }
   
   }
 }

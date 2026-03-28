@@ -17,9 +17,9 @@ import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.componen
 import { CurcilComponent } from './curcil/curcil.component';
 import { RectangelComponent } from './rectangel/rectangel.component';
 import { EmployeeComponent } from './employee/employee.component';
-import { ProductsComponent } from './products/products.component';
+
 import { VehicleComponent } from './vehicle/vehicle.component';
-import{HttpClientModule}from '@angular/common/http';
+import{HTTP_INTERCEPTORS, HttpClientModule}from '@angular/common/http';
 import { AccountComponent } from './account/account.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
 import { MailComponent } from './mail/mail.component';
@@ -38,6 +38,20 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
+import { ViewAccountComponent } from './view-account/view-account.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
+import { TokenInterceptor } from './token.interceptor';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
+import { CommunicationComponent } from './communication/communication.component';
+import { ClaclatorComponent } from './claclator/claclator.component';
+import { SummaryComponent } from './summary/summary.component';
+import { ActComponent } from './act/act.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +69,6 @@ import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
     CurcilComponent,
     RectangelComponent,
     EmployeeComponent,
-    ProductsComponent,
     VehicleComponent,
     AccountComponent,
     FlipcartComponent,
@@ -71,6 +84,19 @@ import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
     CreateVehicleComponent,
     CreateStudentComponent,
     ViewVehicleComponent,
+    ViewAccountComponent,
+    CreateAccountComponent,
+    ViewStudentComponent,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent,
+    ItemsComponent,
+    NavComponent,
+    CartComponent,
+    CommunicationComponent,
+    ClaclatorComponent,
+    SummaryComponent,
+    ActComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +108,13 @@ import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
     
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

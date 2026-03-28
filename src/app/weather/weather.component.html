@@ -1,8 +1,8 @@
-<div class="wether card">
+<div class="wether card" [(ngModel)]="weather">
  <h1>weather in hyderbad</h1>
  <h2 >☀️</h2>
 
-<h1 [ngClass]="{'costly':weather.current_weather.temperature<=25,'cheap':weather.current_weather.temperature>25}">{{weather.current_weather.temperature}} {{weather.current_weather_units.temperature}}</h1>
+<h1 [ngClass]="{'costly':weather.current_weather.temperature<=25,'cheap':weather.current_weather.temperature>25}">{{weather.current_weather.temperature}} {{weather.current_weather_units.temperature}} </h1>
 
 <h4>windspped {{weather.current_weather.windspeed}} {{weather.current_weather_units.windspeed}}</h4>
 <h4>wind direction {{weather.current_weather.winddirection}} {{weather.current_weather_units.winddirection}}</h4>

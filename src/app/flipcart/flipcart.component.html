@@ -5,7 +5,13 @@
             <h4>{{f.category}}</h4>
             <h6>{{f.title}}</h6>
             <h5 class="pr">rs {{f.price}}</h5>
-            <h6 class="rat">⭐{{f.rating. rate}}</h6>
+            <h1>{{f.rating.rate}}</h1>
+            <app-rating  calss="rat" [rating]="f.rating.rate"></app-rating>
+            <!-- <app-rating  calss="rat" [rating]="4"></app-rating>
+            <app-rating  calss="rat" [rating]="3"></app-rating>
+            <app-rating  calss="rat" [rating]="2"></app-rating>
+            <app-rating  calss="rat" [rating]="1"></app-rating> -->
+            <!-- <h6 class="rat">⭐{{f.rating. rate}}</h6> -->
             
            <h6>available {{f.rating.count}}</h6>
           

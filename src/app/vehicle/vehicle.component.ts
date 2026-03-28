@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VehicleService } from '../vehicle.service';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-vehicle',
@@ -7,12 +8,12 @@ import { VehicleService } from '../vehicle.service';
   styleUrls: ['./vehicle.component.css']
 })
 export class VehicleComponent {
-  vehicle:any = [];
+  vehicle:Vehicle[] = [];
   term:string="";
 
 constructor(private vehicleservice:VehicleService){
   vehicleservice.getvehicle().subscribe(
-    (data:any)=>{
+    (data:Vehicle[])=>{
      this.vehicle = data;
      console.log(data)
     },
@@ -24,7 +25,7 @@ constructor(private vehicleservice:VehicleService){
 
 filtervehicle(){
   this.vehicleservice.filtervehicle(this.term).subscribe(
-   (data:any)=>{
+   (data:Vehicle[])=>{
     this.vehicle=data;
    },
    (eror:any)=>{
@@ -37,7 +38,7 @@ filtervehicle(){
 pagevehicle(page:number){
   
   this.vehicleservice.pagevehicle(page).subscribe(
-   (data:any)=>{
+   (data:Vehicle[])=>{
     this.vehicle=data;
    },
    (eror:any)=>{
@@ -50,7 +51,7 @@ isAsc:boolean=false;
 sortvehicle(column:string){
   this.isAsc=!this.isAsc;
   this.vehicleservice.sortvehicle(column,this.isAsc?'asc':'desc').subscribe(
-   (data:any)=>{
+   (data:Vehicle[])=>{
     this.vehicle=data;
    },
    (eror:any)=>{
@@ -63,7 +64,7 @@ sortvehicle(column:string){
 
 deletevechicle(id:string){
   this.vehicleservice.deletevehicle(id).subscribe(
-    (data:any)=>{
+    (data: Vehicle )=>{
       alert("delete sucessfully")
       location.reload();
     },

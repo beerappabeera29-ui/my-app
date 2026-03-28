@@ -3,8 +3,9 @@ import { WeatherService } from '../weather.service';
 import { BrowserModule } from "@angular/platform-browser";
 
 @Component({
+  
   selector: 'app-weather',
- templateUrl: './weather.component.html',
+  templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.css'],
  
 })

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SchoolService } from '../school-id/school.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-student',
@@ -25,19 +26,51 @@ export class CreateStudentComponent {
     // emial: new FormControl(),
 
   })
-    
-  constructor(private schoolservice:SchoolService){}
+    id:string="";
+
+    constructor(private schoolservice:SchoolService,private activatedroute:ActivatedRoute){
+      activatedroute.params.subscribe(
+        (data:any)=>{
+          this.id=data.id;
+
+          schoolservice.getschools(data.id).subscribe(
+            (data:any)=>{
+              this.studentform.patchValue(data);
+            }
+          )
+        }
+      )
+    }
+
+
   submit(){
-    console.log(this.studentform.value)
-    this.schoolservice.createschool(this.studentform.value).subscribe(
+    console.log(this.studentform)
+    
+    if(this.id){
+       this.schoolservice.editschool(this.id, this.studentform.value).subscribe(
       (data:any)=>{
-        alert('value succusfylly')
+        alert('student value edit successfully')
         this.studentform.reset();
 
       },
       (err:any)=>{
+        alert('this value is error');
   console.log(err);
-}
+  }
     )
+    }
+  else{
+     this.schoolservice.createschool(this.studentform.value).subscribe(
+      (data:any)=>{
+        alert('studeny value created successfully')
+        this.studentform.reset();
+
+      },
+      (err:any)=>{
+        alert('this data not macth as api')
+    console.log(err);
+    }
+    )
+  }
   }
 }

@@ -55,4 +55,14 @@ paginate(page:number,limit:number){
   this.getschoolwithqueryparams();
 }
 
+deleteschool(id:string){
+  this.schoolservice.deleteschool(id).subscribe(
+    (data:any)=>{
+      this.school=data;
+      console.log(data);
+      alert("delete successfully");
+    }
+  )
+}
+
 }

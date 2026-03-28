@@ -13,7 +13,6 @@ import { BmiCaluclatorComponent } from './bmi-caluclator/bmi-caluclator.componen
 import { CurcilComponent } from './curcil/curcil.component';
 import { RectangelComponent } from './rectangel/rectangel.component';
 import { EmployeeComponent } from './employee/employee.component';
-import { ProductsComponent } from './products/products.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { AccountComponent } from './account/account.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
@@ -27,6 +26,16 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { AuthGuard } from './auth.guard';
 import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
+import { ViewAccountComponent } from './view-account/view-account.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
+import { ParentComponent } from './parent/parent.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
+import { CommunicationComponent } from './communication/communication.component';
+import { ClaclatorComponent } from './claclator/claclator.component';
+import { SummaryComponent } from './summary/summary.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -41,7 +50,6 @@ const routes: Routes = [
     {path:'curcil',component:CurcilComponent},
     {path:'rectangel',component:RectangelComponent},
     {path:'employee',component:EmployeeComponent},
-    {path:'products',component:ProductsComponent},
     {path:'vehicle',component:VehicleComponent},
     {path:'account',component:AccountComponent},
     {path:'flipcart',component:FlipcartComponent},
@@ -56,7 +64,21 @@ const routes: Routes = [
     {path:'create-user',component:CreateUserComponent},
     {path:'create-vehicle',component:CreateVehicleComponent},
     {path:'create-student',component:CreateStudentComponent},
-    {path:'view-vehicle/:id',component:ViewVehicleComponent}
+    {path:'create-account',component:CreateAccountComponent},
+    {path:'view-vehicle/:id',component:ViewVehicleComponent},
+    {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+    {path:'view-account/:id',component:ViewAccountComponent},
+    {path:'edit-account/:id',component:CreateAccountComponent},
+    {path:'view-student/:id',component:ViewStudentComponent},
+    {path:'edit-student/:id',component:CreateStudentComponent},
+    {path:'prd',loadChildren:()=>import('./prd/prd.module').then(m=>m.PrdModule)},
+    {path:'parent',component:ParentComponent},
+    {path:'items',component:ItemsComponent},
+    {path:'nav',component:NavComponent},
+    {path:'cart',component:CartComponent},
+    {path:'communication',component:CommunicationComponent},
+    {path:'claclator',component:ClaclatorComponent},
+    {path:'summary',component:SummaryComponent}
   ]},
   
   {path:'',component:LoginComponent},

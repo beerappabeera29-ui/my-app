@@ -1,0 +1,62 @@
+/* Background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Card */
+.account-card {
+    width: 380px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative circle */
+.account-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+/* Profile image */
+.account-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Details */
+.details h2 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}

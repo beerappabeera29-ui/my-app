@@ -1,0 +1,90 @@
+body{
+    margin:0;
+    padding:0;
+    background:#f4f6fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align:center;
+    margin-top:20px;
+    color:#333;
+}
+
+form{
+    width:400px;
+    margin:20px auto;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:600;
+    color:#444;
+}
+
+input[type="text"],
+input[type="number"]{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#007bff;
+}
+
+/* address box */
+div[formGroupName="address"]{
+    margin-top:15px;
+    padding:10px;
+    background:#f9f9f9;
+    border-radius:8px;
+    border:1px solid #eee;
+}
+
+/* radio buttons */
+input[type="radio"]{
+    width:auto;
+    margin-right:5px;
+}
+
+.radio-group{
+    margin-top:10px;
+}
+
+/* submit button */
+input[type="submit"]{
+    width:100%;
+    margin-top:18px;
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+input[type="submit"]:hover{
+    background:#0056b3;
+}
+input[type="radio"]{
+    width:auto;
+    margin:0 5px 0 15px;
+}
+
+label{
+    margin-right:10px;
+}
+
+p{
+    color: red;
+}

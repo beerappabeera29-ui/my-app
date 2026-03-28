@@ -103,5 +103,8 @@ border-radius:8px;
 .c3{
 background:blue;
 height:45px;
+display: flex;
+justify-content: space-around;
+align-items: center;
 }
 
